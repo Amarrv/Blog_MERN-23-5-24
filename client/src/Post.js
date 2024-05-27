@@ -1,21 +1,19 @@
 import React from "react";
+import { format } from "date-fns";
 
-const Post = () => {
+const Post = ({ title, summary, cover, content, createdAt, author }) => {
   return (
     <div className="post">
       <div className="image">
-        <img src="https://media.istockphoto.com/id/1373210791/photo/rearview-of-parked-cars.jpg?s=612x612&w=0&k=20&c=RtaYQ7REicSGjsT9Wxg_wEwZQD1yQu6OJ-5HznqBskU=" />
+        <img src={"http://localhost:4000/" + cover} />
       </div>
       <div className="texts">
-        <h2>Full-House battery backup coming later this year</h2>
+        <h2>{title}</h2>
         <p className="info">
-          <a className="author">Amar</a>
-          <time>06-01-2024 16:45</time>
+          <a className="author">{author.username}</a>
+          <time>{format(new Date(createdAt), "MMM-d-yyyy h:mm")}</time>
         </p>
-        <p className="summary">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-          voluptates velit quasi temporibus, reprehenderit odio?
-        </p>
+        <p className="summary">{summary}</p>
       </div>
     </div>
   );
