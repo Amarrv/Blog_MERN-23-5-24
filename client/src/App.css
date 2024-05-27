@@ -99,6 +99,9 @@ form.login h1,
 form.register h1 {
   text-align: center;
 }
+div.post-page {
+  margin: 20px;
+}
 
 div.post-page div.image {
   max-height: 300px;
